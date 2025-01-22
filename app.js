@@ -35,4 +35,6 @@ function visualizarLista () {
     document.getElementById("listaAmigos").innerHTML = amigoSorteado;
 }
     
-
+function sorteioAleatorio () {
+    
+}
