@@ -1,24 +1,29 @@
 let amigoSorteado = [];
 let controladorNomes = 0 ;
 
-function adicionarAmigo() {
-    console.log("Entrei no controladorNomes");
+function validarEntrada () {
+
     let textoValido = document.getElementById("amigo").value;
+    console.log(`textoValido: ${textoValido}`);
 
-        if (textoValido == "") {
+    if (textoValido == "" || textoValido.charAt(0)== " ") {
+        alert("Por favor, digite um nome");
+    } else {
+        console.log(`Entrei na funçao adicionarAmigos\n O texto valido é: ${textoValido} ` );
+        adicionarAmigo (textoValido);
+    }
+}
 
-            alert("Por favor, digite um nome!");
-
-        } else {
-
-                console.log("O texto é válido");
-
-                while(controladorNomes >= 0 ){
+function adicionarAmigo(nomeValido) {
+    console.log("Entrei no controladorNomes");
+    
+            while(controladorNomes >= 0 ){
                     
-                    console.log("Entrei no controladorNomes");
-                    amigoSorteado[controladorNomes]=textoValido;
-                    controladorNomes++;
-                    console.log(`Nomes Armazenados: ${amigoSorteado} `);
+                console.log("Entrei no controladorNomes");
+                amigoSorteado[controladorNomes]=nomeValido;
+                controladorNomes++;
+                console.log(`Nomes Armazenados: ${amigoSorteado} `);
+
                     break;
                 
                 }
@@ -26,4 +31,4 @@ function adicionarAmigo() {
         }
         
     
-}
+
