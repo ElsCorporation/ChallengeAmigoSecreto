@@ -3,7 +3,8 @@ let controladorNomes = 0 ;
 
 function validarEntrada () {
 
-    let textoInserido = document.getElementById("amigo").value;
+    let textoInserido = document.getElementById("amigo").value; 
+
     let checagemString = textoInserido.trim();
     console.log(`Texto Inserido: ${textoInserido}\n ChecagemString: ${checagemString}`);
 
@@ -12,13 +13,13 @@ function validarEntrada () {
     } else {
         console.log(`Entrei na funçao adicionarAmigos\n O texto valido é: ${checagemString}` );
         adicionarAmigo (checagemString);
-        document.getElementById("amigo").value ="";
+        document.getElementById("amigo").value = "";
     }
 }
 
 function adicionarAmigo(nomeValido) {
     console.log("Entrei no adicionarAmigos ()");
-    
+
     while(controladorNomes >= 0 ){
                     
         console.log("Entrei no controladorNomes");
@@ -33,9 +34,19 @@ function adicionarAmigo(nomeValido) {
 }
      
 function visualizarLista () {
-    console.log(`Lista atual: ${listaDeAmigos}\n Numero de participantes: ${controladorNomes}`);
-    document.getElementById("listaAmigos").innerHTML = listaDeAmigos;
-}
+    
+    let posicaoArray = 0;
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+
+    while (posicaoArray < listaDeAmigos.length) {
+    let mostrarListaNoHTML = document.createElement('li');
+    mostrarListaNoHTML.textContent = listaDeAmigos[posicaoArray];
+    let lista = document.getElementById("listaAmigos");
+    lista.appendChild(mostrarListaNoHTML);
+    posicaoArray++;
+    }
+} 
     
 function sortearAmigo() {
 
