@@ -13,14 +13,17 @@ Projeto desenvolvido em aula do passo 5 "Encara o Challenge de Iniciante em Prog
 
 - `Validar Entrada` : Permitir que o valor digitado pelo usuário seja válido, evitando que ele apenas deixe um espaço vazio, e retornando um valor verificado.
 - `Adicionar Amigo` : Possibilitar que o nome digitado seja armazenado em uma lista, quando o nome digitado for verificado na função anterior.
-
 - `Visualizar Lista`: Mostrar todos os amigos verificados na página, em formato de lista. 
-
 - `Sortear Amigo`: Exibe uma janela com o amigo sorteado da lista, através de um número sorteado.
 
-# Ferramentas utilizadas:
+<a href="https://elscorporation.github.io/ChallengeAmigoSecreto/">Que tal testar o programa?</a>
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg" width = "50" height = "50" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width = "50" height = "50" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg" width = "50" height = "50" />
+<a title ="Que tal salvar o projeto em um .zip?" href="https://github.com/ElsCorporation/ChallengeAmigoSecreto/archive/refs/heads/main.zip"><img src = "https://www.svgrepo.com/show/395640/save.svg" width = 50 height = 50></a>
+
+
+# Ferramentas utilizadas:
+<a title ="Visual Studio Code" href="https://code.visualstudio.com"><img src = "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" width = 50 height = 50></a> <a title ="GitHub" href="https://github.com"><img src = "https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/71-github-512.png" width = 50 height = 50></a> <a title ="Git" href="https://git-scm.com/downloads"><img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/97px-Git_icon.svg.png?20220905010122" width = 50 height = 50></a>
+
           
 # Autor:
 
