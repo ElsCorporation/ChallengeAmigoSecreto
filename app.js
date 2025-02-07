@@ -1,18 +1,18 @@
 let listaDeAmigos = [];
-let controladorNomes = 0 ;
+let controladorNomes = 0;
 
-function validarEntrada () {
+function validarEntrada() {
 
-    let textoInserido = document.getElementById("amigo").value; 
+    let textoInserido = document.getElementById("amigo").value;
 
     let stringValidada = textoInserido.trim();
     console.log(`Texto Inserido: ${textoInserido}\n ChecagemString: ${stringValidada}`);
 
     if (stringValidada == "") {
-        alert("Por favor, digite um nome");
+        alert("Por favor, digite um nome válido.");
     } else {
-        console.log(`Entrei na funçao adicionarAmigos\n O texto valido é: ${stringValidada}` );
-        adicionarAmigo (stringValidada);
+        console.log(`Entrei na funçao adicionarAmigos\n O texto valido é: ${stringValidada}`);
+        adicionarAmigo(stringValidada);
         document.getElementById("amigo").value = "";
     }
 }
@@ -20,47 +20,41 @@ function validarEntrada () {
 function adicionarAmigo(nomeValido) {
     console.log("Entrei no adicionarAmigos ()");
 
-    while(controladorNomes >= 0 ){
-                    
-        console.log("Entrei no controladorNomes");
-        listaDeAmigos[controladorNomes]=nomeValido;
-        controladorNomes++;
-        console.log(`Nomes Armazenados: ${listaDeAmigos} `);
-        
-        break;               
-    }
+    listaDeAmigos[controladorNomes] = nomeValido;
+    controladorNomes++;
+    console.log(`Nomes Armazenados: ${listaDeAmigos} `);
 
-    visualizarLista ();
-            
+    visualizarLista();
+
 }
-     
-function visualizarLista () {
-     
+
+function visualizarLista() {
+
     limparListaHTML();
     reescreverListaHTML();
-    
-} 
+
+}
 
 function sortearAmigo() {
 
     limparListaHTML();
 
     if (listaDeAmigos.length == 0) {
-        
-        alert("Não foram adicionados amigos ao sorteio\nPor favor, digite um nome e clique em Adicionar");
+
+        alert(`Não foram adicionados amigos ao sorteio.\nPor favor, digite um nome e clique em "Adicionar".`);
     }
 
     else {
 
-    let numeroSorteado = parseInt(Math.random() *listaDeAmigos.length);
-    console.log(`Nome Sorteado: ${listaDeAmigos[numeroSorteado]}`);
+        let numeroSorteado = parseInt(Math.random() * listaDeAmigos.length);
+        console.log(`Nome Sorteado: ${listaDeAmigos[numeroSorteado]}`);
 
-    alert(`O seu amigo secreto é: ${listaDeAmigos[numeroSorteado]}`);
-    listaDeAmigos.splice(numeroSorteado, 1);
+        alert(`O seu amigo secreto é: ${listaDeAmigos[numeroSorteado]}`);
+        listaDeAmigos.splice(numeroSorteado, 1);
 
-    console.log(`Lista de amigos: ${listaDeAmigos} \nQuantidade: ${listaDeAmigos.length}`);
+        console.log(`Lista de amigos: ${listaDeAmigos} \nQuantidade: ${listaDeAmigos.length}`);
 
-    reescreverListaHTML();
+        reescreverListaHTML();
     }
 
 }
