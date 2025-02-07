@@ -5,14 +5,14 @@ function validarEntrada () {
 
     let textoInserido = document.getElementById("amigo").value; 
 
-    let checagemString = textoInserido.trim();
-    console.log(`Texto Inserido: ${textoInserido}\n ChecagemString: ${checagemString}`);
+    let stringValidada = textoInserido.trim();
+    console.log(`Texto Inserido: ${textoInserido}\n ChecagemString: ${stringValidada}`);
 
-    if (checagemString == "") {
+    if (stringValidada == "") {
         alert("Por favor, digite um nome");
     } else {
-        console.log(`Entrei na funçao adicionarAmigos\n O texto valido é: ${checagemString}` );
-        adicionarAmigo (checagemString);
+        console.log(`Entrei na funçao adicionarAmigos\n O texto valido é: ${stringValidada}` );
+        adicionarAmigo (stringValidada);
         document.getElementById("amigo").value = "";
     }
 }
@@ -26,6 +26,7 @@ function adicionarAmigo(nomeValido) {
         listaDeAmigos[controladorNomes]=nomeValido;
         controladorNomes++;
         console.log(`Nomes Armazenados: ${listaDeAmigos} `);
+        
         break;               
     }
 
@@ -34,24 +35,46 @@ function adicionarAmigo(nomeValido) {
 }
      
 function visualizarLista () {
+     
+    limparListaHTML();
+    reescreverListaHTML();
     
-    let posicaoArray = 0;
-    let lista = document.getElementById("listaAmigos");
-    lista.innerHTML = "";
-
-    while (posicaoArray < listaDeAmigos.length) {
-    let mostrarListaNoHTML = document.createElement('li');
-    mostrarListaNoHTML.textContent = listaDeAmigos[posicaoArray];
-    let lista = document.getElementById("listaAmigos");
-    lista.appendChild(mostrarListaNoHTML);
-    posicaoArray++;
-    }
 } 
-    
+
 function sortearAmigo() {
+
+    limparListaHTML();
 
     let numeroSorteado = parseInt(Math.random() *listaDeAmigos.length);
     console.log(`Nome Sorteado: ${listaDeAmigos[numeroSorteado]}`);
+
     alert(`O seu amigo secreto é: ${listaDeAmigos[numeroSorteado]}`);
+    listaDeAmigos.splice(numeroSorteado, 1);
+
+    console.log(`Lista de amigos: ${listaDeAmigos} \nQuantidade: ${listaDeAmigos.length}`);
+
+    reescreverListaHTML();
 
 }
+
+function limparListaHTML() {
+
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+    
+}
+
+function reescreverListaHTML() {
+
+    for (let posicaoArray = 0; posicaoArray < listaDeAmigos.length; posicaoArray++) {
+
+        let mostrarListaNoHTML = document.createElement('li');
+        mostrarListaNoHTML.textContent = listaDeAmigos[posicaoArray];
+        let lista = document.getElementById("listaAmigos");
+        lista.appendChild(mostrarListaNoHTML);
+
+    }
+}
+
+
+
