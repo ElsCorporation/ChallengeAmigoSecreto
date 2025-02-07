@@ -61,7 +61,7 @@ function limparListaHTML() {
 
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = "";
-    
+
 }
 
 function reescreverListaHTML() {
@@ -75,6 +75,3 @@ function reescreverListaHTML() {
 
     }
 }
-
-
-
