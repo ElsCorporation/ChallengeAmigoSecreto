@@ -45,6 +45,13 @@ function sortearAmigo() {
 
     limparListaHTML();
 
+    if (listaDeAmigos.length == 0) {
+        
+        alert("Não foram adicionados amigos ao sorteio\nPor favor, digite um nome e clique em Adicionar");
+    }
+
+    else {
+
     let numeroSorteado = parseInt(Math.random() *listaDeAmigos.length);
     console.log(`Nome Sorteado: ${listaDeAmigos[numeroSorteado]}`);
 
@@ -54,6 +61,7 @@ function sortearAmigo() {
     console.log(`Lista de amigos: ${listaDeAmigos} \nQuantidade: ${listaDeAmigos.length}`);
 
     reescreverListaHTML();
+    }
 
 }
 
